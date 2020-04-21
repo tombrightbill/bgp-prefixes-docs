@@ -1,6 +1,10 @@
 {
-  "name": "gatsby-themes",
+  "name": "gatsby-site",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "workspaces": [
+    "site",
+    "packages/*"
+  ]
 }
