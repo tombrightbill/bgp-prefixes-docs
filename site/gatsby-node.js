@@ -25,3 +25,13 @@ console.log('running site node')
 //     },
 //   })
 // })
+
+// in node
+// const templateId = pathToServe.match(/^\/templates\/pages.*/)
+// ? pathToServe.replace(/^\/templates\/pages\//, '').replace('/', '')
+// : ''
+// createNodeField({
+//   node,
+//   name: 'templateId',
+//   value: templateId,
+// })

@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import { markdownRemarkEdge, mdx, FrontMattter, Fields } from '../types/mdx'
 import { sortByWeight } from './utils'
+import { useSitePluginOpts } from '../hooks/useSitePluginOpts'
 // import { useMarkdownNodes } from '../hooks/useMarkdownNodes'
 const maxDepth = 10
 
@@ -12,6 +13,7 @@ export const SidebarLi: React.FunctionComponent<SidebarLiProps> = ({
   depth,
 }) => {
   const { pathToServe } = fields
+  const { publicPath } = useSitePluginOpts()
   const { title, alwaysopen, showNew }: FrontMattter = frontmatter
   const topLevelMarkdown: markdownRemarkEdge[] = useStaticQuery(
     graphql`
@@ -40,12 +42,12 @@ export const SidebarLi: React.FunctionComponent<SidebarLiProps> = ({
   ).allMdx.edges
   const myChildren: mdx[] = topLevelMarkdown
     .filter(
-      edge =>
-        fields.pathToServe === '/workers' + edge.node.fields.parent &&
+      (edge) =>
+        fields.pathToServe === '/' + publicPath + edge.node.fields.parent &&
         fields.pathToServe !== edge.node.fields.pathToServe
     )
-    .map(child => child.node)
-    .filter(child => !child.frontmatter.hidden)
+    .map((child) => child.node)
+    .filter((child) => !child.frontmatter.hidden)
     .sort(sortByWeight)
   const numberOfPages = myChildren.length
 

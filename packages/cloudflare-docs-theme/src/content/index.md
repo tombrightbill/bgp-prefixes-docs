@@ -7,3 +7,5 @@ hidden: false
 ---
 
 # Hello
+
+This is fake content in theme

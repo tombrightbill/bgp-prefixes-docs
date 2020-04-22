@@ -83,16 +83,16 @@ const Sidebar = ({ pathToServe = '/' }) => {
             {topLevelMarkdown
               // get top level (i.e. relURLs with /workers followed by no more than
               // one forward slash) mdx nodes
-              .filter(edge => edge.node.fields.parent === '/')
-              .filter(edge => !edge.node.frontmatter.hidden)
-              .filter(edge => {
+              .filter((edge) => edge.node.fields.parent === '/')
+              .filter((edge) => !edge.node.frontmatter.hidden)
+              .filter((edge) => {
                 //exclude the path if it has a match in EXCLUDED_PATHS
-                const matchedPaths = EXCLUDED_PATHS.filter(excludePath =>
+                const matchedPaths = EXCLUDED_PATHS.filter((excludePath) =>
                   excludePath.test(edge.node.fields.pathToServe)
                 )
                 return matchedPaths.length < 1
               })
-              .map(edge => edge.node)
+              .map((edge) => edge.node)
               .concat(templateGalleryPage)
               .sort(sortByWeight)
               .map((node: mdx) => {

@@ -1,6 +1,12 @@
 module.exports = {
   plugins: [
-    `cloudflare-docs-theme`,
+    {
+      resolve: `cloudflare-docs-theme`,
+      options: {
+        publicPath: 'api',
+        contentPath: './src/content/',
+      },
+    },
     // {
     //   resolve: 'gatsby-source-rest-api',
     //   options: {
@@ -13,6 +19,6 @@ module.exports = {
     description: `Use Cloudflare’s APIs and edge network to build secure, ultra-fast applications.`,
     author: `@cloudflaredev`,
   },
-  assetPrefix: `/workers`,
+  assetPrefix: `/api`,
 }
 console.log('running site config')
