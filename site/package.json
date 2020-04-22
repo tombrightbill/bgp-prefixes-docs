@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
+    "clean": "gatsby clean",
     "build": "gatsby build"
   },
   "dependencies": {

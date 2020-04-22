@@ -14,7 +14,7 @@ type queryReturnType = allRestApiTemplates['data'] & allMarkdownRemarkResult['da
 export const useRestApiTemplates = () =>
   // export const useRestApiTemplates = (): allRestApiTemplates['data'] =>
   {
-    const { allMdx, allRestApiTemplates }: queryReturnType = useStaticQuery(
+    const { allMdx }: queryReturnType = useStaticQuery(
       graphql`
         query {
           allMdx(limit: 1000) {
@@ -36,42 +36,9 @@ export const useRestApiTemplates = () =>
               }
             }
           }
-
-          allRestApiTemplates {
-            edges {
-              node {
-                tags
-                share_url
-                repository_url
-                endpointId
-                description
-                demos {
-                  bar {
-                    text
-                    url
-                  }
-                  foo {
-                    text
-                    url
-                  }
-                  main {
-                    share_url
-                    tags
-                    text
-                    url
-                  }
-                }
-                code
-                title
-                type
-                url
-                weight
-              }
-            }
-          }
         }
       `,
     )
     // const { allMdx, allRestApiTemplates } = data
-    return { allRestApiTemplates, allMdx }
+    return { allMdx }
   }

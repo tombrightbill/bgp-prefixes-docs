@@ -1,1 +1,3 @@
-console.log('sd')
+module.exports = {
+  plugins: [`cloudflare-docs-theme`],
+}

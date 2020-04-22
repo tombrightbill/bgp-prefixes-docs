@@ -1,3 +1,5 @@
 node_modules/
 .cache
 page-data
+public
+template-ignore-for-now

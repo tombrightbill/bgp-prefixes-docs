@@ -5,7 +5,6 @@ import Layout from '../components/Layout'
 
 import { markdownRemarkResult, markdownPageContext } from '../types/mdx'
 import Body from '../components/Body'
-import { Gallery } from '../components/TemplateGallery/Gallery'
 import { Link, Image } from '../components/Link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
@@ -14,11 +13,9 @@ type markdownBaseProps = {
   data: { mdx: markdownRemarkResult }
   pageContext: markdownPageContext
 }
-const getChildrenAsString = (
-  props: React.HtmlHTMLAttributes<HTMLHeadingElement>
-) => {
+const getChildrenAsString = (props: React.HtmlHTMLAttributes<HTMLHeadingElement>) => {
   if (typeof props.children === 'string') {
-   // replace all not alphanumeric characters with dashes
+    // replace all not alphanumeric characters with dashes
     return props.children.replace(/(\s|\W)+/g, '-').toLowerCase()
   }
   // TODO if we'd like headers with children to still have IDs
@@ -34,7 +31,6 @@ const getChildrenAsString = (
   return ''
 }
 const components = {
-  Gallery,
   a: (props: any) => {
     return <Link to={props.href} {...props} />
   },
