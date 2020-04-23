@@ -1,0 +1,6 @@
+echo "Moving things into public/api"
+mv -f public/api/* public
+rm -rf public/api
+mv public api
+mkdir public
+mv api public

@@ -1,0 +1,6 @@
+echo "Moving things into public/gateway"
+mv -f public/gateway/* public
+rm -rf public/gateway
+mv public gateway
+mkdir public
+mv gateway public

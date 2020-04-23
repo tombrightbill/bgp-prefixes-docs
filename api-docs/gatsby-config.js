@@ -7,15 +7,9 @@ module.exports = {
         contentPath: './src/content/',
       },
     },
-    // {
-    //   resolve: 'gatsby-source-rest-api',
-    //   options: {
-    //     endpoints: ['https://template-registry.developers.workers.dev/templates'],
-    //   },
-    // },
   ],
   siteMetadata: {
-    title: `Cloudflare Workers`,
+    title: `Cloudflare API`,
     description: `Use Cloudflare’s APIs and edge network to build secure, ultra-fast applications.`,
     author: `@cloudflaredev`,
   },

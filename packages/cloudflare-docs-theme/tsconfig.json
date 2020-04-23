@@ -16,8 +16,8 @@
   },
   "include": [
     "./src/**/*",
-    "../../site/content/templates/gallery.tsx",
-    "../../site/content/templates/templatePage.tsx"
+    "../../api-docs/content/templates/gallery.tsx",
+    "../../api-docs/content/templates/templatePage.tsx"
   ],
   "exclude": ["node_modules", "public"]
 }

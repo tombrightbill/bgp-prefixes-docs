@@ -1,7 +1,7 @@
 {
-  "name": "site",
+  "name": "gateway-docs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "workers-site/index.js",
   "license": "MIT",
   "scripts": {
     "build": "gatsby clean && gatsby build --prefix-paths",
@@ -12,7 +12,7 @@
     "worker-build": "npm run build && wrangler build",
     "worker-start": "npm run build && wrangler preview --watch -e staging",
     "worker-test": "ava workers-site/test/index.js --verbose",
-    "publish": "npm run build && wrangler publish -e",
+    "deploy": "npm run build && wrangler publish -e",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "dependencies": {

@@ -1,5 +1,4 @@
 const DEFAULT_THEME_OPTS = { publicPath: 'workers', contentPath: './src/content' }
-console.log('running theme noe')
 exports.onCreateNode = ({ node, getNode, actions }, themeOptions) => {
   //   const { publicPath, content } = themeOptions || DEFAULT_THEME_OPTS
   const contentPath = themeOptions.contentPath || DEFAULT_THEME_OPTS.contentPath
