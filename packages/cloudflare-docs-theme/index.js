@@ -4,3 +4,4 @@ module.exports = {
 export { Navigation } from './src/components/Navigation'
 export { About } from './src/components/About'
 export { Layout } from './src/components/Layout'
+export { Notice } from './src/components/Notice'

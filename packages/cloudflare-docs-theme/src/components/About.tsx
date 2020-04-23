@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSitePluginOpts } from '../hooks/useSitePluginOpts'
-export const About: React.FC<AboutProps> = ({ header, about, title }) => {
+import '../content/static/css/theme.css'
+import '../content/static/css/main.css'
+export const About: React.FC<AboutProps> = ({ header, about, title, getStartedPath }) => {
   const { publicPath } = useSitePluginOpts()
   return (
     <>
@@ -17,7 +19,10 @@ export const About: React.FC<AboutProps> = ({ header, about, title }) => {
             <h1 style={{ maxWidth: '22em' }}>{header}</h1>
             <p style={{ width: '35em' }}>{about}</p>
             <div className="actions">
-              <a href={'/' + publicPath + '/'} className="button orange large more">
+              <a
+                href={getStartedPath || '/' + publicPath + '/'}
+                className="button orange large more"
+              >
                 Get started
               </a>
             </div>
@@ -32,4 +37,5 @@ type AboutProps = {
   header: string
   about: string
   title: string
+  getStartedPath?: string
 }
