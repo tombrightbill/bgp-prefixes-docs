@@ -4,9 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "build": "gatsby clean && gatsby build --prefix-paths",
+    "postbuild": "bin/postbuild",
     "clean": "gatsby clean",
-    "build": "gatsby build"
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "worker-build": "npm run build && wrangler build",
+    "worker-start": "npm run build && wrangler preview --watch -e staging",
+    "worker-test": "ava workers-site/test/index.js --verbose",
+    "publish": "npm run build && wrangler publish -e",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "dependencies": {
     "gatsby": "^2.20.28",
