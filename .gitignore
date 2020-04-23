@@ -3,3 +3,4 @@ node_modules/
 page-data
 public
 *ignore*/
+dist 
