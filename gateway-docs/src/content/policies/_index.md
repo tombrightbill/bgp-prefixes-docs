@@ -1,12 +1,12 @@
 ---
-title: "Policies"
+title: 'Policies'
 alwaysopen: true
 weight: 3
 ---
 
-Cloudflare Gateway's policy engine allows you to block domains by categories, manually block domains and override domains to allow them even if those domains are getting blocked by a category. You can assign a policy to one or multiple locations. 
+Cloudflare Gateway's policy engine allows you to block domains by categories, manually block domains and override domains to allow them even if those domains are getting blocked by a category. You can assign a policy to one or multiple locations.
 
-![Configuring a policy](/static/gateway-create-policy.gif)
+![Configuring a policy](/media/gateway-create-policy.gif)
 
 [Blocking a domain](blocking-a-domain)
 See how you can block a domain using the policy engine.
@@ -20,7 +20,7 @@ Shows how you can block a group of domains or multiple groups of domains using c
 See how you can force resolve a domain even if the domain is getting blocked by another policy.
 
 [Blocking all subdomains](blocking-all-subdomains)
-Provides examples of how you can block subdomains 
+Provides examples of how you can block subdomains
 
 [Troubleshooting Policies](troubleshooting-policies)
 Check out the most common issues you may face when you are setting up a policy.

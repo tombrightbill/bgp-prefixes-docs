@@ -17,20 +17,20 @@ You can deploy Gateway to your corporate iOS devices in bulk. Use an MDM solutio
 When you are on this screen on your phone, you will need to enter the unique subdomain of the location you created for your mobile phone.
 
 1. Visit your teams dashboard to fetch the unique id from your location.
-   ![Go to teams dash](/static/go-to-teams-dashboard.png)
+   ![Go to teams dash](/media/go-to-teams-dashboard.png)
 
 2. Go to locations page to see the list of locations
-   ![Go to locations page](/static/go-to-locations-page.png)
+   ![Go to locations page](/media/go-to-locations-page.png)
 
 3. Expand the location card for the location you want to associate your mobile device with. If you have only one location, expand that location card.
-   ![Expand location card](/static/expand-location-card.png)
+   ![Expand location card](/media/expand-location-card.png)
 
 4. Get the subdomain of the DNS over HTTPS hostname. This is your unique id. In the example below, this id is: fix7p31bzg.
-   ![Get unique subdomain](/static/unique-gateway-id.png)
+   ![Get unique subdomain](/media/unique-gateway-id.png)
 
 ## Modify configuration file
 
-Download the configuration file from [here](/static/cfteams.mobileconfig)
+Download the configuration file from [here](/media/cfteams.mobileconfig)
 
 The contents of the file will look like below:
 

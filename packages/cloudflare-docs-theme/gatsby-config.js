@@ -1,8 +1,9 @@
 const path = require('path')
 // const path = require('path')
 const DEFAULT_THEME_OPTS = { publicPath: 'workers', contentPath: './src/content' }
-console.log('blah')
-__dirname = ''
+// This is to get dirname to resolve to the site's folder
+// e.g. gateway-docs instead of the theme
+__dirname = path.resolve(`.`)
 
 module.exports = (themeOptions) => {
   const contentPath = themeOptions.contentPath || DEFAULT_THEME_OPTS.contentPath
@@ -50,10 +51,6 @@ module.exports = (themeOptions) => {
         // then gatsby figured out who to put it in current folder at public/workers/..
         .sync(path.join(__dirname, './src/**/media'))
         .map((source) => {
-          console.log('source', source)
-          console.log('path.join', path.join(__dirname, './src'))
-          const destination = source.replace(path.join(__dirname, './src/static'), '')
-          // console.log('desination', destination)
           return {
             resolve: 'gatsby-plugin-copy-files',
             options: {

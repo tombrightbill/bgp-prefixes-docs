@@ -26,7 +26,7 @@ The primary difference between 1.1.1.1 and Gateway’s secure DNS filtering is t
 
 Cloudflare Gateway's DNS resolver adds an additional step to introduce security into this flow. Instead of allowing all DNS queries, Gateway first checks the hostname being queried against the intelligence Cloudflare has about threats on the Internet. If that query matches a known threat, or is requesting a blocked category, Gateway stops it before the site could load for the user - and potentially execute code or phish that team member.
 
-![How Gateway Works](/static/how-does-gateway-work-dns.png)
+![How Gateway Works](/media/how-does-gateway-work-dns.png)
 
 For example, if a you are is using Cloudflare Gateway, and send a DNS query to `example.com`, first, Gateway checks if the DNS query is coming from your [location](/locations/). Second, if it is coming from your location, Gateway checks if the DNS query matches with any of the policies setup by you. The policy could be a domain that you are manually blocking or it could be part of a broader security or content category that you enabled. If the domain matches one of those cases, Cloudflare Gateway will block access to the domain.
 
@@ -34,7 +34,7 @@ For example, if a you are is using Cloudflare Gateway, and send a DNS query to `
 
 Gateway supports DNS over HTTPS today and will also support DNS over TLS in the future. You can use cloudflared to setup your device and start sending DNS queries to Gateway in an encrypted fashion. It will also support other DNS over HTTPS clients as long as you can change the hostname in your preferred DNS over HTTPS client. Here’s how DNS over HTTPS for Cloudflare Gateway works:
 
-![How Encrypted DNS Works](/static/encrypted-dns-gateway.png)
+![How Encrypted DNS Works](/media/encrypted-dns-gateway.png)
 
 The DNS over HTTPS client encrypts the DNS request and sends it to the closest Cloudflare’s data center. Upon receiving the encrypted DNS request, it will decrypt it and send it to Cloudflare Gateway. Cloudflare Gateway will log the request, apply the required security policies and return the response to our edge. Our edge will encrypt the response and send it back to the DNS over HTTPS client.
 
