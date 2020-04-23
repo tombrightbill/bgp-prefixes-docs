@@ -8,6 +8,7 @@ import Body from '../components/Body'
 import { Link, Image } from '../components/Link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
+import { useSitePluginOpts } from '../hooks/useSitePluginOpts'
 
 type markdownBaseProps = {
   data: { mdx: markdownRemarkResult }
@@ -56,12 +57,13 @@ const MarkdownTemplate: React.FC<markdownBaseProps> = ({
   const { mdx } = data // data.mdx holds our post data
   const { frontmatter, body, fields } = mdx
   const { title } = frontmatter
+  const { publicPath } = useSitePluginOpts()
   return (
     <>
       <Layout title={title}>
         <Body
           archived={fields.filePath.includes('/archive/')}
-          github_edit_url={`https://github.com/cloudflare/workers-docs/edit/master/src/content${fields.filePath}`}
+          github_edit_url={`https://github.com/victoriabernard92/cloudflare-docs-gatsby/edit/master/${publicPath}-docs/src/content${fields.filePath}`}
         >
           <h1>{frontmatter.title}</h1>
           <MDXProvider components={components}>
