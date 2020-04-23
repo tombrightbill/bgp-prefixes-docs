@@ -13,8 +13,6 @@ type LinkProps = {
 // replace anything with /workers or / prepended to just /workers or whatever is in publicPath
 const stripWorkers = (url: string, path: string) => {
   const regex = new RegExp('^(\\/' + path + '){1,3}')
-  console.log('regex', regex)
-
   return url.replace(regex, '').replace(/^\/(?!\/)/, '/' + path + '/')
 }
 
