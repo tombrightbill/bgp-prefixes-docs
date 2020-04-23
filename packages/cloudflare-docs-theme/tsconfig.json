@@ -14,6 +14,10 @@
     "removeComments": false,
     "preserveConstEnums": true
   },
-  "include": ["./src/**/*"],
+  "include": [
+    "./src/**/*",
+    "../../site/content/templates/gallery.tsx",
+    "../../site/content/templates/templatePage.tsx"
+  ],
   "exclude": ["node_modules", "public"]
 }

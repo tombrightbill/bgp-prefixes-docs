@@ -4,11 +4,14 @@ import { SidebarLi } from './SidebarItem'
 import { sortByWeight } from './utils'
 import { mdx } from '../types/mdx'
 import DocSearch from './DocSearch'
+import { useSitePluginOpts } from '../hooks/useSitePluginOpts'
 // import { useMarkdownNodes } from '../hooks/useMarkdownRemark'
 
-const EXCLUDED_PATHS = [/\/workers\/$/] // Paths to not include in the sidebar
-
 const Sidebar = ({ pathToServe = '/' }) => {
+  const { publicPath } = useSitePluginOpts()
+  // Paths to not include in the sidebar
+  const EXCLUDED_PATHS = [/\/workers\/$/, new RegExp('\\/' + publicPath + '\\/$')]
+
   const clickHandler = () => {
     if (document.body.classList.contains('with-sidebar-open')) {
       document.body.classList.remove('with-sidebar-open')
@@ -42,21 +45,6 @@ const Sidebar = ({ pathToServe = '/' }) => {
       }
     `
   ).allMdx.edges
-
-  const templateGalleryPage = {
-    fields: {
-      pathToServe: '/workers/templates',
-      parent: '/',
-      filePath: 'src/content/workers/templates',
-    },
-    frontmatter: {
-      showNew: false,
-      weight: 1,
-      alwaysopen: false,
-      hidden: false,
-      title: 'Template Gallery',
-    },
-  }
 
   return (
     <>
@@ -93,7 +81,6 @@ const Sidebar = ({ pathToServe = '/' }) => {
                 return matchedPaths.length < 1
               })
               .map((edge) => edge.node)
-              .concat(templateGalleryPage)
               .sort(sortByWeight)
               .map((node: mdx) => {
                 const { fields, frontmatter } = node
