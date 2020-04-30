@@ -2,13 +2,13 @@ Uses the Cloudflare Docs Gatsby theme and sites to generate a Gatsby site and de
 
 # Adding a path
 
-1. Create a directory named the path you'd like deployed (e.g. `/api` ) and append `-docs`. (e.g. `api` + `-docs` = `api-docs`)
+1. Create a directory named the path you'd like deployed (e.g. `/byoip` ) and append `-docs`. (e.g. `byoip` + `-docs` = `byoip-docs`)
 
-2. Copy paste content of one of the exisitng folder
+2. Copy paste content of one of the exisitng folders (e.g. copy paste gateway-docs and rename it `byoip-docs`)
 
 3. Replace markdown content with your own
 
-4. Replace the public path in gatsby-config.js, `/bin`, wrangler.toml and package.json with your own
+4. Replace the public path in gatsby-config.js, `/bin`, wrangler.toml and package.json with your own (i.e. Do a find and replace all `gateway` => `byoip`)
 
 # Test
 
