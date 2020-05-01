@@ -1,0 +1,24 @@
+{
+  "name": "bgp-prefixes-docs",
+  "version": "1.0.0",
+  "main": "workers-site/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby clean && gatsby build --prefix-paths",
+    "postbuild": "bin/postbuild",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "worker-build": "npm run build && wrangler build",
+    "worker-start": "npm run build && wrangler preview --watch -e staging",
+    "worker-test": "ava workers-site/test/index.js --verbose",
+    "deploy": "npm run build && wrangler publish -e",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+  },
+  "dependencies": {
+    "gatsby": "^2.20.28",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "cloudflare-docs-theme": "*"
+  }
+}
