@@ -1,0 +1,30 @@
+name: Deploy staging site
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  cd-api:
+    runs-on: ubuntu-latest
+    name: Deploy with wrangler action
+    steps:
+      - uses: actions/checkout@v1
+      - name: cd api-dpcs
+        run: 'cd api-docs'
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy with wrangler action
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install
+        run: 'yarn'
+      - name: Build site
+        run: 'yarn workspace api-docs run build'
+      - name: Publish
+        uses: cloudflare/wrangler-action@1.1.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN_STAGING }}
+          environment: 'staging'
+          workingDirectory: 'api-docs'
